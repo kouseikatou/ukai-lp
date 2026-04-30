@@ -48,7 +48,7 @@
       </nav>
 
       <div class="md-cta">
-        <a href="${HOME}contact/" class="md-cta-btn">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScjo7hymKSQXotVILgv59LAVYHmarkRy0b6zLCGdoaRWXskug/viewform" target="_blank" rel="noopener noreferrer" class="md-cta-btn">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg>
           ご相談・お問い合わせ
         </a>

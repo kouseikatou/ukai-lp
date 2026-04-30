@@ -7,37 +7,6 @@
 get_header();
 ?>
 
-<!-- HEADER (same as top) -->
-<header class="site-header">
-  <div class="header-inner">
-    <a href="/" class="logo">
-      <span class="logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 40 40" width="34" height="34"><path d="M6 30 L20 8 L34 30 L27 30 L20 18 L13 30 Z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 30 L20 16 L28 30" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
-      </span>
-      <span class="logo-text">
-        <span class="logo-ja">鵜飼工業</span>
-        <span class="logo-en">UKAI KOGYO</span>
-      </span>
-    </a>
-    <nav class="nav">
-      <a href="/works/" class="active">施工事例</a>
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#service">サービス</a>
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#reason">庭づくりのこだわり</a>
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#voice">お客様の声</a>
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#news">ニュース</a>
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#faq">よくあるご質問</a>
-      <a href="/company/">会社概要</a>
-    </nav>
-    <div class="header-cta">
-      <a href="/contact/" class="btn-contact">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg>
-        ご相談・お問い合わせ
-      </a>
-      <button class="hamburger" aria-label="menu"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-</header>
-
 <!-- PAGE HEAD -->
 <section class="page-head">
   <div class="page-head-inner">
@@ -265,41 +234,11 @@ get_header();
     <div class="works-cta-eyebrow">CONTACT</div>
     <h2 class="works-cta-title">気になる事例があれば、<br/>お気軽にご相談ください。</h2>
     <p class="works-cta-lead">「この事例のような庭にしたい」「予算感を相談したい」など、<br class="hide-sp"/>具体的なイメージからのご相談も大歓迎です。</p>
-    <a class="works-cta-btn" href="/contact/">
+    <a class="works-cta-btn" href="https://docs.google.com/forms/d/e/1FAIpQLScjo7hymKSQXotVILgv59LAVYHmarkRy0b6zLCGdoaRWXskug/viewform" target="_blank" rel="noopener noreferrer">
       <span>無料相談・お問い合わせはこちら</span>
       <span class="arr" aria-hidden="true">→</span>
     </a>
   </div>
 </section>
-
-<!-- FOOTER -->
-<footer class="footer" id="company">
-  <div class="footer-inner">
-    <a href="/" class="logo logo-footer">
-      <span class="logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 40 40" width="30" height="30"><path d="M6 30 L20 8 L34 30 L27 30 L20 18 L13 30 Z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 30 L20 16 L28 30" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
-      </span>
-      <span class="logo-text">
-        <span class="logo-ja">鵜飼工業</span>
-        <span class="logo-en">UKAI KOGYO</span>
-      </span>
-    </a>
-    <nav class="footer-nav">
-      <a href="/works/">施工事例</a>
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#service">サービス</a>
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#reason">庭づくりのこだわり</a>
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#voice">お客様の声</a>
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#news">ニュース</a>
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#faq">よくあるご質問</a>
-      <a href="/company/">会社概要</a>
-    </nav>
-    <nav class="footer-sub">
-      <a href="#">プライバシーポリシー</a>
-      <a href="#">サイトマップ</a>
-    </nav>
-  </div>
-  <div class="footer-copy">© UKAI KOGYO All Rights Reserved.</div>
-</footer>
-
 
 <?php get_footer(); ?>

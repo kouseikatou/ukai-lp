@@ -29,7 +29,7 @@ get_header();
       <a href="/company/">会社概要</a>
     </nav>
     <div class="header-cta">
-      <a href="/contact/" class="btn-contact active">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScjo7hymKSQXotVILgv59LAVYHmarkRy0b6zLCGdoaRWXskug/viewform" target="_blank" rel="noopener noreferrer" class="btn-contact active">
         <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg>
         ご相談・お問い合わせ
       </a>

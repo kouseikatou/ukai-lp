@@ -7,39 +7,6 @@
 get_header();
 ?>
 
-<!-- ============ HEADER ============ -->
-<header class="site-header" id="site-header">
-  <div class="header-inner">
-    <a href="#" class="logo">
-      <span class="logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 40 40" width="34" height="34"><path d="M6 30 L20 8 L34 30 L27 30 L20 18 L13 30 Z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 30 L20 16 L28 30" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
-      </span>
-      <span class="logo-text">
-        <span class="logo-ja">鵜飼工業</span>
-        <span class="logo-en">UKAI KOGYO</span>
-      </span>
-    </a>
-    <nav class="nav">
-      <a href="#works">施工事例</a>
-      <a href="#service">サービス</a>
-      <a href="#reason">庭づくりのこだわり</a>
-      <a href="#flow">お客様の声</a>
-      <a href="#news">ニュース</a>
-      <a href="#faq">よくあるご質問</a>
-      <a href="/company/">会社概要</a>
-    </nav>
-    <div class="header-cta">
-      <a href="/contact/" class="btn-contact">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg>
-        ご相談・お問い合わせ
-      </a>
-      <button class="hamburger" aria-label="menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
-
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero-bg" id="hero-bg"></div>
@@ -52,7 +19,7 @@ get_header();
       </h1>
       <p class="hero-sub">外構・エクステリア・庭づくりで、<br/>暮らしに寄り添う理想の住まいをカタチにします。</p>
       <div class="hero-ctas">
-        <a class="btn btn-ghost" href="/contact/">無料相談・お問い合わせ<span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="https://docs.google.com/forms/d/e/1FAIpQLScjo7hymKSQXotVILgv59LAVYHmarkRy0b6zLCGdoaRWXskug/viewform" target="_blank" rel="noopener noreferrer">無料相談・お問い合わせ<span class="arr">→</span></a>
         <a class="btn btn-ghost" href="#works">施工事例を見る<span class="arr">→</span></a>
       </div>
     </div>
@@ -376,7 +343,7 @@ get_header();
       <div class="contact-copy">
         <h3>理想の暮らしを、<br/>一緒にカタチにしませんか。</h3>
         <p>ご相談・お見積もりは無料です。<br/>お気軽にお問い合わせください。</p>
-        <a class="btn btn-primary" href="/contact/">無料相談・お問い合わせはこちら<span class="arr">→</span></a>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScjo7hymKSQXotVILgv59LAVYHmarkRy0b6zLCGdoaRWXskug/viewform" target="_blank" rel="noopener noreferrer">無料相談・お問い合わせはこちら<span class="arr">→</span></a>
       </div>
       <div class="contact-illust" data-img="family"></div>
     </aside>
@@ -396,7 +363,7 @@ get_header();
         <div class="cb-sub">受付時間 9:00〜18:00 / 定休日 水曜</div>
       </div>
     </div>
-    <a class="cb-item cb-link" href="/contact/">
+    <a class="cb-item cb-link" href="https://docs.google.com/forms/d/e/1FAIpQLScjo7hymKSQXotVILgv59LAVYHmarkRy0b6zLCGdoaRWXskug/viewform" target="_blank" rel="noopener noreferrer">
       <div class="cb-ic">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg>
       </div>
@@ -416,35 +383,5 @@ get_header();
     </a>
   </div>
 </section>
-
-<!-- ============ FOOTER ============ -->
-<footer class="footer" id="company">
-  <div class="footer-inner">
-    <a href="#" class="logo logo-footer">
-      <span class="logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 40 40" width="30" height="30"><path d="M6 30 L20 8 L34 30 L27 30 L20 18 L13 30 Z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 30 L20 16 L28 30" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
-      </span>
-      <span class="logo-text">
-        <span class="logo-ja">鵜飼工業</span>
-        <span class="logo-en">UKAI KOGYO</span>
-      </span>
-    </a>
-    <nav class="footer-nav">
-      <a href="#works">施工事例</a>
-      <a href="#service">サービス</a>
-      <a href="#reason">庭づくりのこだわり</a>
-      <a href="#voice">お客様の声</a>
-      <a href="#news">ニュース</a>
-      <a href="#faq">よくあるご質問</a>
-      <a href="/company/">会社概要</a>
-    </nav>
-    <nav class="footer-sub">
-      <a href="#">プライバシーポリシー</a>
-      <a href="#">サイトマップ</a>
-    </nav>
-  </div>
-  <div class="footer-copy">© UKAI KOGYO All Rights Reserved.</div>
-</footer>
-
 
 <?php get_footer(); ?>
