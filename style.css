@@ -1,0 +1,14 @@
+/*
+Theme Name: 鵜飼工業 LP
+Theme URI: https://ukai-kogyo.local
+Author: UKAI KOGYO
+Description: 鵜飼工業の LP（外構・エクステリア・庭づくり）を WordPress テーマ化したもの。LP の HTML/CSS/JS をそのまま動くように移植。
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
+License: All Rights Reserved
+Text Domain: ukai-kogyo
+*/
+
+/* スタイルは css/styles.css に分離している（LP オリジナルをそのまま使用） */
