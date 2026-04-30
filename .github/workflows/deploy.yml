@@ -1,0 +1,48 @@
+name: Deploy theme to XServer
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-xserver
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup SSH key
+        env:
+          SSH_KEY: ${{ secrets.XSERVER_SSH_KEY }}
+          HOST: ${{ secrets.XSERVER_HOST }}
+          PORT: ${{ secrets.XSERVER_PORT }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/xserver
+          chmod 600 ~/.ssh/xserver
+          ssh-keyscan -p "$PORT" -H "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Deploy via rsync
+        env:
+          USER: ${{ secrets.XSERVER_USER }}
+          HOST: ${{ secrets.XSERVER_HOST }}
+          PORT: ${{ secrets.XSERVER_PORT }}
+          DEST: ${{ secrets.XSERVER_THEME_PATH }}
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/xserver -p $PORT" \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='.gitignore' \
+            --exclude='.DS_Store' \
+            ./ \
+            "$USER@$HOST:$DEST"
+
+      - name: Summary
+        run: echo "Deployed to https://ukaikougyou.insane-innovation-aichi.com/"
