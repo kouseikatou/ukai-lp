@@ -28,24 +28,6 @@ jobs:
           chmod 600 ~/.ssh/xserver
           ssh-keyscan -p "$PORT" -H "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
 
-      - name: Debug — runner IP and SSH handshake
-        env:
-          USER: ${{ secrets.XSERVER_USER }}
-          HOST: ${{ secrets.XSERVER_HOST }}
-          PORT: ${{ secrets.XSERVER_PORT }}
-        run: |
-          echo "Runner public IP:"
-          curl -s https://api.ipify.org || true
-          echo
-          echo "--- SSH verbose handshake ---"
-          ssh -vvv -i ~/.ssh/xserver -p "$PORT" \
-            -o PubkeyAcceptedAlgorithms=+ssh-rsa \
-            -o HostKeyAlgorithms=+ssh-rsa \
-            -o StrictHostKeyChecking=no \
-            -o BatchMode=yes \
-            -o ConnectTimeout=10 \
-            "$USER@$HOST" 'echo OK' 2>&1 | tail -50 || true
-
       - name: Deploy via rsync
         env:
           USER: ${{ secrets.XSERVER_USER }}
