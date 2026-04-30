@@ -35,8 +35,12 @@ jobs:
           PORT: ${{ secrets.XSERVER_PORT }}
           DEST: ${{ secrets.XSERVER_THEME_PATH }}
         run: |
+          SSH_OPTS="-i ~/.ssh/xserver -p $PORT \
+            -o PubkeyAcceptedAlgorithms=+ssh-rsa \
+            -o HostKeyAlgorithms=+ssh-rsa \
+            -o StrictHostKeyChecking=no"
           rsync -avz --delete \
-            -e "ssh -i ~/.ssh/xserver -p $PORT" \
+            -e "ssh $SSH_OPTS" \
             --exclude='.git/' \
             --exclude='.github/' \
             --exclude='.gitignore' \
