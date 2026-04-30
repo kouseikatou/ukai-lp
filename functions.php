@@ -353,6 +353,98 @@ function ukai_render_sample_tool_page() {
 }
 
 /* =============================================================================
+   共通ナビゲーション
+   ============================================================================= */
+
+/**
+ * 現在表示中のページを示す簡易スラッグを返す。
+ * 固定ページはスラッグ、投稿詳細は news として扱う（ニュース配下扱い）。
+ */
+function ukai_current_page_slug() {
+	if ( is_page() ) {
+		return get_post_field( 'post_name', get_queried_object_id() );
+	}
+	if ( is_singular( 'post' ) || is_home() ) {
+		return 'news';
+	}
+	return '';
+}
+
+/**
+ * ホーム（フロントページ）かどうか。
+ * フロントページ表示にテンプレート page-home.php を使っている前提。
+ */
+function ukai_is_home_page() {
+	return is_front_page() || is_page( 'home' );
+}
+
+/**
+ * お問い合わせ用の URL（現状は Google フォーム）。
+ * 1 か所で差し替えられるよう、テンプレートはこの関数を経由する。
+ */
+function ukai_contact_url() {
+	return 'https://docs.google.com/forms/d/e/1FAIpQLScjo7hymKSQXotVILgv59LAVYHmarkRy0b6zLCGdoaRWXskug/viewform';
+}
+
+/**
+ * 外部リンク（Google フォーム等）かどうか判定し、必要なら target/rel 属性を返す。
+ */
+function ukai_contact_link_attrs() {
+	$url = ukai_contact_url();
+	if ( 0 === stripos( $url, 'http' ) && false === stripos( $url, home_url() ) ) {
+		return ' target="_blank" rel="noopener noreferrer"';
+	}
+	return '';
+}
+
+/**
+ * ヘッダー / フッター共通のナビゲーション項目。
+ * ホームでは LP セクションへのアンカー、その他では個別ページ（または home_url + #anchor）。
+ */
+function ukai_nav_items() {
+	$is_home  = ukai_is_home_page();
+	$home_url = trailingslashit( home_url( '/' ) );
+
+	return array(
+		array(
+			'label' => '施工事例',
+			'href'  => $is_home ? '#works' : home_url( '/works/' ),
+			'slug'  => 'works',
+		),
+		array(
+			'label' => 'サービス',
+			'href'  => $is_home ? '#service' : $home_url . '#service',
+			'slug'  => '',
+		),
+		array(
+			'label' => '庭づくりのこだわり',
+			'href'  => $is_home ? '#reason' : $home_url . '#reason',
+			'slug'  => '',
+		),
+		array(
+			'label' => 'お客様の声',
+			'href'  => $is_home ? '#voice' : $home_url . '#voice',
+			'slug'  => '',
+		),
+		array(
+			'label' => 'ニュース',
+			'href'  => $is_home ? '#news' : home_url( '/news/' ),
+			'slug'  => 'news',
+		),
+		array(
+			'label' => 'よくあるご質問',
+			'href'  => $is_home ? '#faq' : home_url( '/faq/' ),
+			'slug'  => 'faq',
+		),
+		array(
+			'label' => '会社概要',
+			'href'  => home_url( '/company/' ),
+			'slug'  => 'company',
+		),
+	);
+}
+
+/* =============================================================================
    ニュース関連: テンプレート判定とアセット読み込みの調整
    ============================================================================= */
 

@@ -30,37 +30,6 @@ while ( have_posts() ) :
 	);
 ?>
 
-<!-- HEADER -->
-<header class="site-header">
-  <div class="header-inner">
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
-      <span class="logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 40 40" width="34" height="34"><path d="M6 30 L20 8 L34 30 L27 30 L20 18 L13 30 Z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 30 L20 16 L28 30" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
-      </span>
-      <span class="logo-text">
-        <span class="logo-ja">鵜飼工業</span>
-        <span class="logo-en">UKAI KOGYO</span>
-      </span>
-    </a>
-    <nav class="nav">
-      <a href="/works/">施工事例</a>
-      <a href="/#service">サービス</a>
-      <a href="/#reason">庭づくりのこだわり</a>
-      <a href="/#voice">お客様の声</a>
-      <a href="/news/" class="active">ニュース</a>
-      <a href="/#faq">よくあるご質問</a>
-      <a href="/company/">会社概要</a>
-    </nav>
-    <div class="header-cta">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScjo7hymKSQXotVILgv59LAVYHmarkRy0b6zLCGdoaRWXskug/viewform" target="_blank" rel="noopener noreferrer" class="btn-contact">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg>
-        ご相談・お問い合わせ
-      </a>
-      <button class="hamburger" aria-label="menu"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-</header>
-
 <!-- ARTICLE -->
 <article class="news-article">
   <nav class="article-breadcrumbs" aria-label="パンくず">
@@ -167,35 +136,6 @@ while ( have_posts() ) :
     </aside>
   </div>
 </section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-inner">
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo logo-footer">
-      <span class="logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 40 40" width="30" height="30"><path d="M6 30 L20 8 L34 30 L27 30 L20 18 L13 30 Z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 30 L20 16 L28 30" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
-      </span>
-      <span class="logo-text">
-        <span class="logo-ja">鵜飼工業</span>
-        <span class="logo-en">UKAI KOGYO</span>
-      </span>
-    </a>
-    <nav class="footer-nav">
-      <a href="/works/">施工事例</a>
-      <a href="/#service">サービス</a>
-      <a href="/#reason">庭づくりのこだわり</a>
-      <a href="/#voice">お客様の声</a>
-      <a href="/news/">ニュース</a>
-      <a href="/#faq">よくあるご質問</a>
-      <a href="/company/">会社概要</a>
-    </nav>
-    <nav class="footer-sub">
-      <a href="#">プライバシーポリシー</a>
-      <a href="#">サイトマップ</a>
-    </nav>
-  </div>
-  <div class="footer-copy">© UKAI KOGYO All Rights Reserved.</div>
-</footer>
 
 <?php endwhile; ?>
 
