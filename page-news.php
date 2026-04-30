@@ -78,11 +78,11 @@ function ukai_reiwa( $year ) {
     </a>
     <nav class="nav">
       <a href="/works/">施工事例</a>
-      <a href="#service">サービス</a>
-      <a href="#reason">庭づくりのこだわり</a>
-      <a href="#voice">お客様の声</a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#service">サービス</a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#reason">庭づくりのこだわり</a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#voice">お客様の声</a>
       <a href="/news/" class="active">ニュース</a>
-      <a href="#faq">よくあるご質問</a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#faq">よくあるご質問</a>
       <a href="/company/">会社概要</a>
     </nav>
     <div class="header-cta">
@@ -201,11 +201,11 @@ function ukai_reiwa( $year ) {
     </a>
     <nav class="footer-nav">
       <a href="/works/">施工事例</a>
-      <a href="#service">サービス</a>
-      <a href="#reason">庭づくりのこだわり</a>
-      <a href="#voice">お客様の声</a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#service">サービス</a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#reason">庭づくりのこだわり</a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#voice">お客様の声</a>
       <a href="/news/">ニュース</a>
-      <a href="#faq">よくあるご質問</a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#faq">よくあるご質問</a>
       <a href="/company/">会社概要</a>
     </nav>
     <nav class="footer-sub">

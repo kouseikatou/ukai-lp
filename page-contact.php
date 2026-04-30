@@ -21,9 +21,9 @@ get_header();
     </a>
     <nav class="nav">
       <a href="/works/">施工事例</a>
-      <a href="#service">サービス</a>
-      <a href="#reason">庭づくりのこだわり</a>
-      <a href="#voice">お客様の声</a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#service">サービス</a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#reason">庭づくりのこだわり</a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#voice">お客様の声</a>
       <a href="/news/">ニュース</a>
       <a href="/faq/">よくあるご質問</a>
       <a href="/company/">会社概要</a>
@@ -283,9 +283,9 @@ get_header();
     </a>
     <nav class="footer-nav">
       <a href="/works/">施工事例</a>
-      <a href="#service">サービス</a>
-      <a href="#reason">庭づくりのこだわり</a>
-      <a href="#voice">お客様の声</a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#service">サービス</a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#reason">庭づくりのこだわり</a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>#voice">お客様の声</a>
       <a href="/news/">ニュース</a>
       <a href="/faq/">よくあるご質問</a>
       <a href="/company/">会社概要</a>
