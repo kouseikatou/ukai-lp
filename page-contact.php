@@ -38,8 +38,8 @@ get_header();
         <svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M7 5h6l3 7-4 3a16 16 0 008 8l3-4 7 3v6a2 2 0 01-2 2A22 22 0 015 7a2 2 0 012-2z"/></svg>
       </div>
       <div class="cm-label">お電話でのお問い合わせ</div>
-      <div class="cm-tel">0564-XX-XXXX</div>
-      <div class="cm-desc">受付時間 9:00〜18:00 / 日曜定休</div>
+      <div class="cm-tel">090-3467-1335</div>
+      <div class="cm-desc">営業時間 9:00–18:00（日曜定休）</div>
     </div>
     <div class="cm-card">
       <div class="cm-num">03</div>
@@ -103,7 +103,7 @@ get_header();
 
       <div class="aside-note">
         <div class="an-title">ご返信について</div>
-        <p>営業時間内（9:00〜18:00 / 日曜定休）にいただいたお問い合わせは、当日中にご返信いたします。お急ぎの方はお電話（0564-XX-XXXX）までお願いいたします。</p>
+        <p>営業時間内（9:00–18:00 / 日曜定休）にいただいたお問い合わせは、当日中にご返信いたします。お急ぎの方はお電話（090-3467-1335）までお願いいたします。</p>
       </div>
     </aside>
 

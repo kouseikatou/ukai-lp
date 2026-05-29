@@ -7,11 +7,17 @@
 
 $ukai_current = ukai_current_page_slug();
 $ukai_items   = ukai_nav_items();
+$ukai_logo    = get_template_directory_uri() . '/assets/logo.png';
+$ukai_favicon = get_template_directory_uri() . '/assets/favicon.png';
+$ukai_favicon_ico = get_template_directory_uri() . '/assets/favicon.ico';
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" href="<?php echo esc_url( $ukai_favicon ); ?>" type="image/png" sizes="512x512" />
+<link rel="shortcut icon" href="<?php echo esc_url( $ukai_favicon_ico ); ?>" />
+<link rel="apple-touch-icon" href="<?php echo esc_url( $ukai_favicon ); ?>" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <?php wp_head(); ?>
@@ -22,13 +28,7 @@ $ukai_items   = ukai_nav_items();
 <header class="site-header" id="site-header">
   <div class="header-inner">
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
-      <span class="logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 40 40" width="34" height="34"><path d="M6 30 L20 8 L34 30 L27 30 L20 18 L13 30 Z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 30 L20 16 L28 30" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
-      </span>
-      <span class="logo-text">
-        <span class="logo-ja">鵜飼工業</span>
-        <span class="logo-en">UKAI KOGYO</span>
-      </span>
+      <img src="<?php echo esc_url( $ukai_logo ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="logo-image" width="178" height="76">
     </a>
     <nav class="nav">
       <?php foreach ( $ukai_items as $item ) :

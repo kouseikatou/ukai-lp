@@ -2,29 +2,31 @@
 // WordPress 用に window.UKAI.assets でテーマアセット URI を受け取る
 const ASSETS = (typeof window !== 'undefined' && window.UKAI && window.UKAI.assets) ? window.UKAI.assets : 'assets';
 const IMG = {
-  hero: ASSETS + '/hero-sunset.png',
-  work1: ASSETS + '/material4.jpg',
-  work2: ASSETS + '/material1.jpg',
-  work3: ASSETS + '/work1.png',
-  work4: ASSETS + '/work2.png',
-  work5: ASSETS + '/work3.png',
-  work6: ASSETS + '/work5.png',
-  reason1: ASSETS + '/reason1.png',
-  reason2: ASSETS + '/reason2.png',
-  reason3: ASSETS + '/reason3.png',
-  reason4: ASSETS + '/reason4.png',
-  reason5: ASSETS + '/reason5.png',
-  voice1: ASSETS + '/voice1.png',
-  voice2: ASSETS + '/voice2.png',
-  voice3: ASSETS + '/voice3.png',
-  voice4: ASSETS + '/voice4.png',
-  voice5: ASSETS + '/voice5.png',
-  ig1: ASSETS + '/material1.jpg',
-  ig2: ASSETS + '/ig1.jpg',
-  ig3: ASSETS + '/material3.jpg',
-  ig4: ASSETS + '/ig2.jpg',
-  ig5: ASSETS + '/material2.jpg',
-  ig6: ASSETS + '/ig3.jpg',
+  hero: ASSETS + '/works-twilight-lighting.jpg',
+  work1: ASSETS + '/natural-work-garden.jpg',
+  work2: ASSETS + '/works-navy-siding.jpg',
+  work3: ASSETS + '/works-black-fence.jpg',
+  work4: ASSETS + '/natural-work-entrance.jpg',
+  work5: ASSETS + '/natural-work-approach.jpg',
+  work6: ASSETS + '/works-wa-modern.jpg',
+  reason1: ASSETS + '/reason-hearing.jpg',
+  reason2: ASSETS + '/reason-price.jpg',
+  reason3: ASSETS + '/reason-design.jpg',
+  reason4: ASSETS + '/reason-construction.jpg',
+  reason5: ASSETS + '/reason-support.jpg',
+  voice1: ASSETS + '/voice-finish-okazaki.jpg',
+  voice2: ASSETS + '/voice-family-garden.jpg',
+  voice3: ASSETS + '/voice-budget-exterior.jpg',
+  voice4: ASSETS + '/voice-night-lighting.jpg',
+  voice5: ASSETS + '/voice-after-support.jpg',
+  ig1: ASSETS + '/works-interior-living.jpg',
+  ig2: ASSETS + '/works-interior-kitchen.jpg',
+  ig3: ASSETS + '/works-interior-dining.jpg',
+  ig4: ASSETS + '/works-wa-modern.jpg',
+  ig5: ASSETS + '/works-seasonal-planting.jpg',
+  ig6: ASSETS + '/works-twilight-lighting.jpg',
+  material3: ASSETS + '/works-construction-site.jpg',
+  worksPlanting: ASSETS + '/works-seasonal-planting.jpg',
   family: ASSETS + '/family.png',
   logo: ASSETS + '/logo.png',
 };
@@ -61,30 +63,17 @@ document.querySelectorAll('[data-img]').forEach(el=>{
   img.src = src;
 });
 
-// Hero bg
-(function(){
-  const hero = document.getElementById('hero-bg');
-  if(!hero) return;
-  const img = new Image();
-  img.onload = ()=>{
-    hero.style.backgroundImage = `linear-gradient(180deg, rgba(20,25,20,.08) 0%, rgba(20,25,20,.4) 100%), url("${IMG.hero}")`;
-    hero.style.backgroundSize = 'cover';
-    hero.style.backgroundPosition = 'center 45%';
-    hero.classList.add('loaded');
-  };
-  img.onerror = ()=>{
-    hero.style.backgroundImage = stripedPlaceholder('HERO / 外観写真');
-    hero.style.backgroundSize = 'cover';
-    hero.style.backgroundPosition = 'center';
-  };
-  img.src = IMG.hero;
-})();
-
 // FAQ toggle
 document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.setAttribute('aria-expanded', btn.classList.contains('is-open') ? 'true' : 'false');
+
   btn.addEventListener('click', ()=>{
-    btn.classList.toggle('open');
+    btn.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', btn.classList.contains('is-open') ? 'true' : 'false');
+
     const t = btn.querySelector('.faq-toggle');
-    t.textContent = btn.classList.contains('open') ? '−' : '+';
+    if(t){
+      t.textContent = btn.classList.contains('is-open') ? '−' : '+';
+    }
   });
 });

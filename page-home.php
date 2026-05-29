@@ -5,11 +5,39 @@
  * @package UkaiKogyo
  */
 get_header();
+
+$ukai_assets      = get_template_directory_uri() . '/assets';
+$ukai_hero_images = array(
+  array(
+    'file' => 'works-twilight-lighting.jpg',
+    'pos'  => 'center 45%',
+  ),
+  array(
+    'file' => 'natural-work-garden.jpg',
+    'pos'  => 'center 50%',
+  ),
+  array(
+    'file' => 'natural-work-entrance.jpg',
+    'pos'  => 'center 48%',
+  ),
+  array(
+    'file' => 'natural-work-approach.jpg',
+    'pos'  => 'center 52%',
+  ),
+  array(
+    'file' => 'works-navy-siding.jpg',
+    'pos'  => 'center 50%',
+  ),
+);
 ?>
 
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="hero-bg" id="hero-bg"></div>
+  <div class="hero-bg" id="hero-bg">
+    <?php foreach ( $ukai_hero_images as $index => $image ) : ?>
+      <div class="hero-slide<?php echo 0 === $index ? ' is-active' : ''; ?>" style="--hero-delay: <?php echo esc_attr( $index * 6 ); ?>s; --hero-position: <?php echo esc_attr( $image['pos'] ); ?>; background-image: linear-gradient(180deg, rgba(20,25,20,.08) 0%, rgba(20,25,20,.4) 100%), url('<?php echo esc_url( $ukai_assets . '/' . $image['file'] ); ?>');"></div>
+    <?php endforeach; ?>
+  </div>
   <div class="hero-inner">
     <div class="hero-text">
       <h1 class="hero-title">
@@ -359,8 +387,8 @@ get_header();
       </div>
       <div class="cb-body">
         <div class="cb-sub">お電話でのお問い合わせ</div>
-        <div class="cb-tel">0120-123-456</div>
-        <div class="cb-sub">受付時間 9:00〜18:00 / 定休日 水曜</div>
+        <div class="cb-tel">090-3467-1335</div>
+        <div class="cb-sub">営業時間 9:00–18:00（日曜定休）</div>
       </div>
     </div>
     <a class="cb-item cb-link" href="https://docs.google.com/forms/d/e/1FAIpQLScjo7hymKSQXotVILgv59LAVYHmarkRy0b6zLCGdoaRWXskug/viewform" target="_blank" rel="noopener noreferrer">
@@ -370,15 +398,6 @@ get_header();
       <div class="cb-body">
         <div class="cb-sub">メールでのお問い合わせ</div>
         <div class="cb-strong">お問い合わせフォームへ<span class="arr">→</span></div>
-      </div>
-    </a>
-    <a class="cb-item cb-link cb-line" href="#">
-      <div class="cb-ic cb-ic-line">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M19 4H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h4l3 3 3-3h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/></svg>
-      </div>
-      <div class="cb-body">
-        <div class="cb-sub">LINEでのお問い合わせ</div>
-        <div class="cb-strong">友だち追加で相談する<span class="arr">→</span></div>
       </div>
     </a>
   </div>

@@ -70,7 +70,7 @@ get_header();
 <section class="works-archive">
   <div class="works-archive-grid">
 
-    <a class="wa-card" href="#" data-taste="garden" data-budget="b2" data-cat="garden fence">
+    <article class="wa-card" data-taste="garden" data-budget="b2" data-cat="garden fence">
       <div class="wa-img" data-img="work1"></div>
       <div class="wa-body">
         <div class="wa-tags"><span>ガーデン</span><span>フェンス</span></div>
@@ -80,9 +80,9 @@ get_header();
           <span class="wa-price">120〜180万円</span>
         </div>
       </div>
-    </a>
+    </article>
 
-    <a class="wa-card" href="#" data-taste="modern" data-budget="b2" data-cat="exterior">
+    <article class="wa-card" data-taste="modern" data-budget="b2" data-cat="exterior">
       <div class="wa-img" data-img="work2"></div>
       <div class="wa-body">
         <div class="wa-tags"><span>シンプルモダン</span><span>外構</span></div>
@@ -92,9 +92,9 @@ get_header();
           <span class="wa-price">150〜200万円</span>
         </div>
       </div>
-    </a>
+    </article>
 
-    <a class="wa-card" href="#" data-taste="modern" data-budget="b2" data-cat="exterior fence">
+    <article class="wa-card" data-taste="modern" data-budget="b2" data-cat="exterior fence">
       <div class="wa-img" data-img="work3"></div>
       <div class="wa-body">
         <div class="wa-tags"><span>シンプルモダン</span><span>外構</span></div>
@@ -104,9 +104,9 @@ get_header();
           <span class="wa-price">120〜180万円</span>
         </div>
       </div>
-    </a>
+    </article>
 
-    <a class="wa-card" href="#" data-taste="natural" data-budget="b1" data-cat="approach">
+    <article class="wa-card" data-taste="natural" data-budget="b1" data-cat="approach">
       <div class="wa-img" data-img="work4"></div>
       <div class="wa-body">
         <div class="wa-tags"><span>ナチュラル</span><span>アプローチ</span></div>
@@ -116,9 +116,9 @@ get_header();
           <span class="wa-price">80〜120万円</span>
         </div>
       </div>
-    </a>
+    </article>
 
-    <a class="wa-card" href="#" data-taste="natural" data-budget="b2" data-cat="approach">
+    <article class="wa-card" data-taste="natural" data-budget="b2" data-cat="approach">
       <div class="wa-img" data-img="work5"></div>
       <div class="wa-body">
         <div class="wa-tags"><span>ナチュラル</span><span>アプローチ</span></div>
@@ -128,9 +128,9 @@ get_header();
           <span class="wa-price">100〜150万円</span>
         </div>
       </div>
-    </a>
+    </article>
 
-    <a class="wa-card" href="#" data-taste="japanese" data-budget="b1" data-cat="exterior">
+    <article class="wa-card" data-taste="japanese" data-budget="b1" data-cat="exterior">
       <div class="wa-img" data-img="work6"></div>
       <div class="wa-body">
         <div class="wa-tags"><span>和モダン</span><span>外構</span></div>
@@ -140,9 +140,9 @@ get_header();
           <span class="wa-price">90〜140万円</span>
         </div>
       </div>
-    </a>
+    </article>
 
-    <a class="wa-card" href="#" data-taste="modern" data-budget="b3" data-cat="exterior">
+    <article class="wa-card" data-taste="modern" data-budget="b3" data-cat="exterior">
       <div class="wa-img" data-img="hero"></div>
       <div class="wa-body">
         <div class="wa-tags"><span>シンプルモダン</span><span>ライティング</span></div>
@@ -152,9 +152,9 @@ get_header();
           <span class="wa-price">220〜280万円</span>
         </div>
       </div>
-    </a>
+    </article>
 
-    <a class="wa-card" href="#" data-taste="reno" data-budget="b3" data-cat="interior">
+    <article class="wa-card" data-taste="reno" data-budget="b3" data-cat="interior">
       <div class="wa-img" data-img="ig1"></div>
       <div class="wa-body">
         <div class="wa-tags"><span>リノベーション</span><span>リフォーム</span></div>
@@ -164,9 +164,9 @@ get_header();
           <span class="wa-price">200〜300万円</span>
         </div>
       </div>
-    </a>
+    </article>
 
-    <a class="wa-card" href="#" data-taste="reno" data-budget="b3" data-cat="interior">
+    <article class="wa-card" data-taste="reno" data-budget="b3" data-cat="interior">
       <div class="wa-img" data-img="ig2"></div>
       <div class="wa-body">
         <div class="wa-tags"><span>リノベーション</span><span>キッチン</span></div>
@@ -176,9 +176,9 @@ get_header();
           <span class="wa-price">230〜320万円</span>
         </div>
       </div>
-    </a>
+    </article>
 
-    <a class="wa-card" href="#" data-taste="reno" data-budget="b2" data-cat="interior">
+    <article class="wa-card" data-taste="reno" data-budget="b2" data-cat="interior">
       <div class="wa-img" data-img="ig3"></div>
       <div class="wa-body">
         <div class="wa-tags"><span>リノベーション</span><span>リビング</span></div>
@@ -188,9 +188,9 @@ get_header();
           <span class="wa-price">180〜240万円</span>
         </div>
       </div>
-    </a>
+    </article>
 
-    <a class="wa-card" href="#" data-taste="modern" data-budget="b2" data-cat="exterior">
+    <article class="wa-card" data-taste="modern" data-budget="b2" data-cat="exterior">
       <div class="wa-img" data-img="material3"></div>
       <div class="wa-body">
         <div class="wa-tags"><span>外構工事</span><span>新築</span></div>
@@ -200,10 +200,10 @@ get_header();
           <span class="wa-price">130〜180万円</span>
         </div>
       </div>
-    </a>
+    </article>
 
-    <a class="wa-card" href="#" data-taste="garden" data-budget="b1" data-cat="garden">
-      <div class="wa-img" data-img="reason5"></div>
+    <article class="wa-card" data-taste="garden" data-budget="b1" data-cat="garden">
+      <div class="wa-img" data-img="worksPlanting"></div>
       <div class="wa-body">
         <div class="wa-tags"><span>ガーデン</span><span>植栽</span></div>
         <h3 class="wa-title">四季を楽しむ植栽デザイン</h3>
@@ -212,19 +212,8 @@ get_header();
           <span class="wa-price">60〜100万円</span>
         </div>
       </div>
-    </a>
+    </article>
 
-  </div>
-
-  <!-- PAGINATION -->
-  <div class="pagination">
-    <button class="page-btn" disabled>‹ 前へ</button>
-    <button class="page-num active">1</button>
-    <button class="page-num">2</button>
-    <button class="page-num">3</button>
-    <span class="page-dots">…</span>
-    <button class="page-num">8</button>
-    <button class="page-btn">次へ ›</button>
   </div>
 </section>
 

@@ -163,6 +163,7 @@
   transition: grid-template-rows .25s ease;
   background: var(--bg-paper, #f5efe5);
 }
+.faq-archive .faq-q[aria-expanded="true"] + .faq-a,
 .faq-archive .faq-q.is-open + .faq-a{
   grid-template-rows: 1fr;
 }
@@ -176,6 +177,7 @@
   position: relative;
   transition: padding .25s;
 }
+.faq-archive .faq-q[aria-expanded="true"] + .faq-a > p,
 .faq-archive .faq-q.is-open + .faq-a > p{
   padding: 24px 56px 28px 44px;
 }
@@ -193,6 +195,7 @@
   opacity: 0;
   transition: opacity .25s;
 }
+.faq-archive .faq-q[aria-expanded="true"] + .faq-a > p::before,
 .faq-archive .faq-q.is-open + .faq-a > p::before{
   opacity: 1;
 }

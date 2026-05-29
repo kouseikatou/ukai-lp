@@ -6,19 +6,14 @@
  */
 
 $ukai_items = ukai_nav_items();
+$ukai_logo  = get_template_directory_uri() . '/assets/logo.png';
 ?>
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer" id="company">
   <div class="footer-inner">
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo logo-footer">
-      <span class="logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 40 40" width="30" height="30"><path d="M6 30 L20 8 L34 30 L27 30 L20 18 L13 30 Z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 30 L20 16 L28 30" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
-      </span>
-      <span class="logo-text">
-        <span class="logo-ja">鵜飼工業</span>
-        <span class="logo-en">UKAI KOGYO</span>
-      </span>
+      <img src="<?php echo esc_url( $ukai_logo ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="logo-image logo-image-footer" width="178" height="76">
     </a>
     <nav class="footer-nav">
       <?php foreach ( $ukai_items as $item ) : ?>

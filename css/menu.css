@@ -62,24 +62,9 @@
 .md-logo{
   display: flex;
   align-items: center;
-  gap: 10px;
   color: var(--ink);
 }
-.md-logo-mark{color: var(--accent); display: flex}
-.md-logo-text{display: flex; flex-direction: column; line-height: 1.2}
-.md-logo-ja{
-  font-family: var(--f-ja-serif);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: .08em;
-}
-.md-logo-en{
-  font-family: var(--f-en-serif);
-  font-size: 9.5px;
-  letter-spacing: .14em;
-  color: var(--ink-3);
-  margin-top: 2px;
-}
+.md-logo-image{width:112px; height:auto}
 .md-close{
   width: 40px; height: 40px;
   display: grid;

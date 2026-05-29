@@ -63,13 +63,13 @@ get_header();
         <dt>所在地</dt>
         <dd>
           〒491-0353<br/>
-          愛知県一宮市萩原町萩原朝三味南10番<br/>
+          愛知県一宮市萩原町萩原字三味南10番<br/>
           <span class="ci-tel">TEL：090-3467-1335</span>
         </dd>
       </div>
       <div class="ci-row">
         <dt>営業時間</dt>
-        <dd>8:00〜18:00（日曜定休）</dd>
+        <dd>9:00–18:00（日曜定休）</dd>
       </div>
       <div class="ci-row">
         <dt>事業内容</dt>
@@ -77,7 +77,8 @@ get_header();
           土木工事<br/>
           ブロック工事<br/>
           新築外構工事<br/>
-          リフォーム外構工事
+          リフォーム外構工事<br/>
+          舗装工事
         </dd>
       </div>
       <div class="ci-row">
@@ -102,14 +103,14 @@ get_header();
           <div class="ca-info-label">住所</div>
           <div class="ca-info-value">
             〒491-0353<br/>
-            愛知県一宮市萩原町萩原朝三味南10番
+            愛知県一宮市萩原町萩原字三味南10番
           </div>
         </div>
         <div class="ca-info-block">
           <div class="ca-info-label">お問い合わせ</div>
           <div class="ca-info-value">
             <a href="tel:09034671335" class="ca-tel">090-3467-1335</a><br/>
-            <span class="ca-info-sub">受付：8:00〜18:00 / 日曜定休</span>
+            <span class="ca-info-sub">営業時間 9:00–18:00（日曜定休）</span>
           </div>
         </div>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScjo7hymKSQXotVILgv59LAVYHmarkRy0b6zLCGdoaRWXskug/viewform" target="_blank" rel="noopener noreferrer" class="btn btn-primary ca-btn">無料相談・お問い合わせはこちら<span class="arr">→</span></a>

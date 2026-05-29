@@ -34,7 +34,7 @@ add_action( 'after_setup_theme', 'ukai_setup' );
 
 function ukai_enqueue_assets() {
 	$theme_uri    = get_template_directory_uri();
-	$ver          = '1.0.0';
+	$ver          = '1.0.8';
 
 	// Google Fonts
 	wp_enqueue_style(
