@@ -7,9 +7,9 @@
 
 $ukai_current = ukai_current_page_slug();
 $ukai_items   = ukai_nav_items();
-$ukai_logo    = get_template_directory_uri() . '/assets/logo.png';
-$ukai_favicon = get_template_directory_uri() . '/assets/favicon.png';
-$ukai_favicon_ico = get_template_directory_uri() . '/assets/favicon.ico';
+$ukai_logo    = ukai_asset_uri( '/assets/logo.png' );
+$ukai_favicon = ukai_asset_uri( '/assets/favicon.png' );
+$ukai_favicon_ico = ukai_asset_uri( '/assets/favicon.ico' );
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>

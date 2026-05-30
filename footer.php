@@ -6,7 +6,7 @@
  */
 
 $ukai_items = ukai_nav_items();
-$ukai_logo  = get_template_directory_uri() . '/assets/logo.png';
+$ukai_logo  = ukai_asset_uri( '/assets/logo.png' );
 ?>
 
 <!-- ============ FOOTER ============ -->

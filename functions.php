@@ -10,6 +10,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /* =============================================================================
+   アセットURLヘルパー（キャッシュバスティング）
+   ============================================================================= */
+
+if ( ! function_exists( 'ukai_asset_uri' ) ) :
+	/**
+	 * テーマ内アセットのURLにファイル更新時刻のクエリを付与して返す。
+	 * ファイルを差し替えるたびにURLが変わるため、ブラウザ/サーバーの
+	 * キャッシュが自動的に更新される。
+	 *
+	 * @param string $relative_path テーマルートからの相対パス（例: '/assets/logo.png'）
+	 * @return string バージョンクエリ付きの完全なURL
+	 */
+	function ukai_asset_uri( $relative_path ) {
+		$relative_path = '/' . ltrim( $relative_path, '/' );
+		$url           = get_template_directory_uri() . $relative_path;
+		$file          = get_template_directory() . $relative_path;
+		$version       = file_exists( $file ) ? filemtime( $file ) : null;
+
+		return $version ? add_query_arg( 'v', $version, $url ) : $url;
+	}
+endif;
+
+/* =============================================================================
    テーマセットアップ
    ============================================================================= */
 
