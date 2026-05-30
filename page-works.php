@@ -169,17 +169,6 @@ get_header();
       </div>
     </article>
 
-    <article class="wa-card" data-taste="modern" data-budget="b2" data-cat="exterior">
-      <div class="wa-img" data-img="worksConstruction"></div>
-      <div class="wa-body">
-        <div class="wa-tags"><span>外構工事</span><span>新築</span></div>
-        <h3 class="wa-title">新築外構工事の様子</h3>
-        <div class="wa-meta">
-          <span class="wa-loc">愛知県知立市</span>
-        </div>
-      </div>
-    </article>
-
     <article class="wa-card" data-taste="garden" data-budget="b1" data-cat="garden">
       <div class="wa-img" data-img="worksPlanting"></div>
       <div class="wa-body">
