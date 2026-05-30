@@ -12,7 +12,7 @@ get_header();
   <div class="page-head-inner">
     <div class="eyebrow">WORKS</div>
     <h1 class="page-title">施工事例一覧</h1>
-    <p class="page-lead">これまでに手がけた施工事例をご紹介します。<br/>テイスト・ご予算・カテゴリーから理想の庭づくりのヒントを見つけてください。</p>
+    <p class="page-lead">これまでに手がけた施工事例をご紹介します。<br/>テイスト・カテゴリーから理想の庭づくりのヒントを見つけてください。</p>
     <nav class="breadcrumbs">
       <a href="/">トップ</a>
       <span>›</span>
@@ -36,15 +36,6 @@ get_header();
       </div>
     </div>
     <div class="filter-group">
-      <div class="filter-label">ご予算</div>
-      <div class="chips" data-filter="budget">
-        <button class="chip active" data-value="all">すべて</button>
-        <button class="chip" data-value="b1">〜100万円</button>
-        <button class="chip" data-value="b2">100〜200万円</button>
-        <button class="chip" data-value="b3">200万円〜</button>
-      </div>
-    </div>
-    <div class="filter-group">
       <div class="filter-label">カテゴリー</div>
       <div class="chips" data-filter="cat">
         <button class="chip active" data-value="all">すべて</button>
@@ -60,8 +51,6 @@ get_header();
     <div class="filter-result"><span id="result-count">12</span>件の施工事例</div>
     <select class="sort-select">
       <option>新着順</option>
-      <option>価格が安い順</option>
-      <option>価格が高い順</option>
     </select>
   </div>
 </section>
@@ -77,7 +66,6 @@ get_header();
         <h3 class="wa-title">ウッドフェンスのプライベートガーデン</h3>
         <div class="wa-meta">
           <span class="wa-loc">愛知県岡崎市</span>
-          <span class="wa-price">120〜180万円</span>
         </div>
       </div>
     </article>
@@ -89,7 +77,6 @@ get_header();
         <h3 class="wa-title">紺色サイディングの邸宅外構</h3>
         <div class="wa-meta">
           <span class="wa-loc">愛知県豊田市</span>
-          <span class="wa-price">150〜200万円</span>
         </div>
       </div>
     </article>
@@ -101,7 +88,6 @@ get_header();
         <h3 class="wa-title">黒フェンスが映えるモダン外構</h3>
         <div class="wa-meta">
           <span class="wa-loc">愛知県安城市</span>
-          <span class="wa-price">120〜180万円</span>
         </div>
       </div>
     </article>
@@ -113,7 +99,6 @@ get_header();
         <h3 class="wa-title">ナチュラルテイストの玄関</h3>
         <div class="wa-meta">
           <span class="wa-loc">愛知県刈谷市</span>
-          <span class="wa-price">80〜120万円</span>
         </div>
       </div>
     </article>
@@ -125,7 +110,6 @@ get_header();
         <h3 class="wa-title">石畳アプローチの白い玄関</h3>
         <div class="wa-meta">
           <span class="wa-loc">愛知県名古屋市</span>
-          <span class="wa-price">100〜150万円</span>
         </div>
       </div>
     </article>
@@ -137,7 +121,6 @@ get_header();
         <h3 class="wa-title">和モダン塗り壁の門周り</h3>
         <div class="wa-meta">
           <span class="wa-loc">愛知県西尾市</span>
-          <span class="wa-price">90〜140万円</span>
         </div>
       </div>
     </article>
@@ -149,7 +132,6 @@ get_header();
         <h3 class="wa-title">夕景に映えるライティング外構</h3>
         <div class="wa-meta">
           <span class="wa-loc">愛知県岡崎市</span>
-          <span class="wa-price">220〜280万円</span>
         </div>
       </div>
     </article>
@@ -161,7 +143,6 @@ get_header();
         <h3 class="wa-title">木の温もりあふれるリビング</h3>
         <div class="wa-meta">
           <span class="wa-loc">愛知県豊田市</span>
-          <span class="wa-price">200〜300万円</span>
         </div>
       </div>
     </article>
@@ -173,7 +154,6 @@ get_header();
         <h3 class="wa-title">家族が集まる対面キッチン</h3>
         <div class="wa-meta">
           <span class="wa-loc">愛知県岡崎市</span>
-          <span class="wa-price">230〜320万円</span>
         </div>
       </div>
     </article>
@@ -185,19 +165,17 @@ get_header();
         <h3 class="wa-title">ナチュラルな木目のダイニング</h3>
         <div class="wa-meta">
           <span class="wa-loc">愛知県安城市</span>
-          <span class="wa-price">180〜240万円</span>
         </div>
       </div>
     </article>
 
     <article class="wa-card" data-taste="modern" data-budget="b2" data-cat="exterior">
-      <div class="wa-img" data-img="material3"></div>
+      <div class="wa-img" data-img="worksConstruction"></div>
       <div class="wa-body">
         <div class="wa-tags"><span>外構工事</span><span>新築</span></div>
         <h3 class="wa-title">新築外構工事の様子</h3>
         <div class="wa-meta">
           <span class="wa-loc">愛知県知立市</span>
-          <span class="wa-price">130〜180万円</span>
         </div>
       </div>
     </article>
@@ -209,7 +187,6 @@ get_header();
         <h3 class="wa-title">四季を楽しむ植栽デザイン</h3>
         <div class="wa-meta">
           <span class="wa-loc">愛知県名古屋市</span>
-          <span class="wa-price">60〜100万円</span>
         </div>
       </div>
     </article>

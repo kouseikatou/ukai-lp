@@ -68,42 +68,36 @@ $ukai_hero_images = array(
         <div class="work-img" data-img="work1"></div>
         <figcaption>
           <div class="wc-title">ウッドフェンスのプライベートガーデン</div>
-          <div class="wc-price">120〜180万円</div>
         </figcaption>
       </figure>
       <figure class="work-card">
         <div class="work-img" data-img="work2"></div>
         <figcaption>
           <div class="wc-title">紺色サイディングの邸宅外構</div>
-          <div class="wc-price">150〜200万円</div>
         </figcaption>
       </figure>
       <figure class="work-card">
         <div class="work-img" data-img="work3"></div>
         <figcaption>
           <div class="wc-title">シンプルモダンの外構</div>
-          <div class="wc-price">120〜180万円</div>
         </figcaption>
       </figure>
       <figure class="work-card">
         <div class="work-img" data-img="work4"></div>
         <figcaption>
           <div class="wc-title">ナチュラルテイストの玄関</div>
-          <div class="wc-price">80〜120万円</div>
         </figcaption>
       </figure>
       <figure class="work-card">
         <div class="work-img" data-img="work5"></div>
         <figcaption>
           <div class="wc-title">石畳アプローチの白い玄関</div>
-          <div class="wc-price">100〜150万円</div>
         </figcaption>
       </figure>
       <figure class="work-card">
         <div class="work-img" data-img="work6"></div>
         <figcaption>
           <div class="wc-title">和モダン塗り壁の門周り</div>
-          <div class="wc-price">90〜140万円</div>
         </figcaption>
       </figure>
     </div>

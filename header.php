@@ -28,7 +28,7 @@ $ukai_favicon_ico = get_template_directory_uri() . '/assets/favicon.ico';
 <header class="site-header" id="site-header">
   <div class="header-inner">
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
-      <img src="<?php echo esc_url( $ukai_logo ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="logo-image" width="178" height="76">
+      <img src="<?php echo esc_url( $ukai_logo ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="logo-image" width="58" height="60">
     </a>
     <nav class="nav">
       <?php foreach ( $ukai_items as $item ) :

@@ -22,7 +22,7 @@
     <aside class="md-panel" role="dialog" aria-label="メニュー">
       <div class="md-head">
         <a href="${HOME}" class="md-logo">
-          <img src="${ASSETS}/logo.png" alt="鵜飼工業" class="md-logo-image" width="178" height="76">
+          <img src="${ASSETS}/logo.png" alt="鵜飼工業" class="md-logo-image" width="58" height="60">
         </a>
         <button class="md-close" aria-label="閉じる">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5l14 14M19 5L5 19"/></svg>

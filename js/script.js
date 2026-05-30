@@ -25,7 +25,7 @@ const IMG = {
   ig4: ASSETS + '/works-wa-modern.jpg',
   ig5: ASSETS + '/works-seasonal-planting.jpg',
   ig6: ASSETS + '/works-twilight-lighting.jpg',
-  material3: ASSETS + '/works-construction-site.jpg',
+  worksConstruction: ASSETS + '/works-construction-site.jpg',
   worksPlanting: ASSETS + '/works-seasonal-planting.jpg',
   family: ASSETS + '/family.png',
   logo: ASSETS + '/logo.png',

@@ -5,7 +5,7 @@
   // by pointing them to known files.
   const ASSETS = (typeof window !== 'undefined' && window.UKAI && window.UKAI.assets) ? window.UKAI.assets : 'assets';
   const extraSrc = {
-    material3: ASSETS + '/works-construction-site.jpg',
+    worksConstruction: ASSETS + '/works-construction-site.jpg',
     worksPlanting: ASSETS + '/works-seasonal-planting.jpg',
   };
   document.querySelectorAll('[data-img]').forEach(el=>{
@@ -19,30 +19,17 @@
   window.__IMG_EXTRA = true;
 })();
 
-// Price badges on archive images.
-document.querySelectorAll('.wa-card').forEach(card=>{
-  const img = card.querySelector('.wa-img');
-  const price = card.querySelector('.wa-price');
-  if(!img || !price || img.querySelector('.wa-price-badge')) return;
-  const badge = document.createElement('span');
-  badge.className = 'wa-price-badge';
-  badge.textContent = price.textContent.trim();
-  img.appendChild(badge);
-});
-
 // FILTERS
-const state = { taste: 'all', budget: 'all', cat: 'all' };
+const state = { taste: 'all', cat: 'all' };
 
 function applyFilters(){
   const cards = document.querySelectorAll('.wa-card');
   let visible = 0;
   cards.forEach(card=>{
     const taste = card.dataset.taste || '';
-    const budget = card.dataset.budget || '';
     const cats = (card.dataset.cat || '').split(/\s+/);
     const ok =
       (state.taste === 'all' || taste === state.taste) &&
-      (state.budget === 'all' || budget === state.budget) &&
       (state.cat === 'all' || cats.includes(state.cat));
     card.classList.toggle('is-hidden', !ok);
     if(ok) visible++;

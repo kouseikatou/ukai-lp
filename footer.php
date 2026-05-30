@@ -13,7 +13,7 @@ $ukai_logo  = get_template_directory_uri() . '/assets/logo.png';
 <footer class="footer" id="company">
   <div class="footer-inner">
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo logo-footer">
-      <img src="<?php echo esc_url( $ukai_logo ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="logo-image logo-image-footer" width="178" height="76">
+      <img src="<?php echo esc_url( $ukai_logo ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="logo-image logo-image-footer" width="58" height="60">
     </a>
     <nav class="footer-nav">
       <?php foreach ( $ukai_items as $item ) : ?>
