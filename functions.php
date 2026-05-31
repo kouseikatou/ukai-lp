@@ -421,6 +421,27 @@ function ukai_contact_link_attrs() {
 }
 
 /**
+ * 公式 SNS リンク。
+ * YouTube / TikTok の公式 URL が確定したら url を差し替える。
+ */
+function ukai_social_links() {
+	return array(
+		array(
+			'label' => 'YouTube',
+			'url'   => '',
+		),
+		array(
+			'label' => 'Instagram',
+			'url'   => 'https://www.instagram.com/ukaikogyo_?utm_source=qr',
+		),
+		array(
+			'label' => 'TikTok',
+			'url'   => '',
+		),
+	);
+}
+
+/**
  * ヘッダー / フッター共通のナビゲーション項目。
  * ホームでは LP セクションへのアンカー、その他では個別ページ（または home_url + #anchor）。
  */
