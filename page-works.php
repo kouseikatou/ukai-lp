@@ -32,7 +32,7 @@ get_header();
         <button class="chip" data-value="natural">ナチュラル</button>
         <button class="chip" data-value="japanese">和モダン</button>
         <button class="chip" data-value="garden">ガーデン</button>
-        <button class="chip" data-value="reno">リノベーション</button>
+        <button class="chip" data-value="civil">造成・土木</button>
       </div>
     </div>
     <div class="filter-group">
@@ -52,7 +52,7 @@ get_header();
     </div>
   </div>
   <div class="filter-result-row">
-    <div class="filter-result"><span id="result-count">18</span>件の施工事例</div>
+    <div class="filter-result"><span id="result-count"><?php echo esc_html( count( ukai_works_items() ) ); ?></span>件の施工事例</div>
     <select class="sort-select">
       <option>新着順</option>
     </select>
@@ -62,204 +62,23 @@ get_header();
 <!-- WORKS GRID -->
 <section class="works-archive">
   <div class="works-archive-grid">
-
-    <article class="wa-card" data-taste="garden" data-budget="b2" data-cat="garden fence">
-      <div class="wa-img" data-img="work1"></div>
+    <?php foreach ( ukai_works_items() as $work ) : ?>
+    <article class="wa-card" data-taste="<?php echo esc_attr( $work['taste'] ); ?>" data-cat="<?php echo esc_attr( $work['cat'] ); ?>">
+      <div class="wa-img" data-img="<?php echo esc_attr( $work['img'] ); ?>"></div>
       <div class="wa-body">
-        <div class="wa-tags"><span>ガーデン</span><span>フェンス</span></div>
-        <h3 class="wa-title">ウッドフェンスのプライベートガーデン</h3>
+        <div class="wa-tags">
+          <?php foreach ( $work['tags'] as $tag ) : ?>
+          <span><?php echo esc_html( $tag ); ?></span>
+          <?php endforeach; ?>
+        </div>
+        <h3 class="wa-title"><?php echo esc_html( $work['title'] ); ?></h3>
+        <p class="wa-desc"><?php echo esc_html( $work['desc'] ); ?></p>
         <div class="wa-meta">
-          <span class="wa-loc">愛知県岡崎市</span>
+          <span class="wa-loc"><?php echo esc_html( $work['loc'] ); ?></span>
         </div>
       </div>
     </article>
-
-    <article class="wa-card" data-taste="modern" data-budget="b2" data-cat="new-exterior concrete">
-      <div class="wa-img" data-img="work2"></div>
-      <div class="wa-body">
-        <div class="wa-tags"><span>シンプルモダン</span><span>外構</span></div>
-        <h3 class="wa-title">紺色サイディングの邸宅外構</h3>
-        <div class="wa-meta">
-          <span class="wa-loc">愛知県豊田市</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="wa-card" data-taste="modern" data-budget="b2" data-cat="new-exterior fence">
-      <div class="wa-img" data-img="work3"></div>
-      <div class="wa-body">
-        <div class="wa-tags"><span>シンプルモダン</span><span>外構</span></div>
-        <h3 class="wa-title">黒フェンスが映えるモダン外構</h3>
-        <div class="wa-meta">
-          <span class="wa-loc">愛知県安城市</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="wa-card" data-taste="natural" data-budget="b1" data-cat="approach">
-      <div class="wa-img" data-img="work4"></div>
-      <div class="wa-body">
-        <div class="wa-tags"><span>ナチュラル</span><span>アプローチ</span></div>
-        <h3 class="wa-title">ナチュラルテイストの玄関</h3>
-        <div class="wa-meta">
-          <span class="wa-loc">愛知県刈谷市</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="wa-card" data-taste="natural" data-budget="b2" data-cat="approach">
-      <div class="wa-img" data-img="work5"></div>
-      <div class="wa-body">
-        <div class="wa-tags"><span>ナチュラル</span><span>アプローチ</span></div>
-        <h3 class="wa-title">石畳アプローチの白い玄関</h3>
-        <div class="wa-meta">
-          <span class="wa-loc">愛知県名古屋市</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="wa-card" data-taste="japanese" data-budget="b1" data-cat="new-exterior block">
-      <div class="wa-img" data-img="work6"></div>
-      <div class="wa-body">
-        <div class="wa-tags"><span>和モダン</span><span>外構</span></div>
-        <h3 class="wa-title">和モダン塗り壁の門周り</h3>
-        <div class="wa-meta">
-          <span class="wa-loc">愛知県西尾市</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="wa-card" data-taste="modern" data-budget="b3" data-cat="new-exterior">
-      <div class="wa-img" data-img="hero"></div>
-      <div class="wa-body">
-        <div class="wa-tags"><span>シンプルモダン</span><span>ライティング</span></div>
-        <h3 class="wa-title">夕景に映えるライティング外構</h3>
-        <div class="wa-meta">
-          <span class="wa-loc">愛知県岡崎市</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="wa-card" data-taste="reno" data-budget="b3" data-cat="interior">
-      <div class="wa-img" data-img="ig1"></div>
-      <div class="wa-body">
-        <div class="wa-tags"><span>リノベーション</span><span>リフォーム</span></div>
-        <h3 class="wa-title">木の温もりあふれるリビング</h3>
-        <div class="wa-meta">
-          <span class="wa-loc">愛知県豊田市</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="wa-card" data-taste="reno" data-budget="b3" data-cat="interior">
-      <div class="wa-img" data-img="ig2"></div>
-      <div class="wa-body">
-        <div class="wa-tags"><span>リノベーション</span><span>キッチン</span></div>
-        <h3 class="wa-title">家族が集まる対面キッチン</h3>
-        <div class="wa-meta">
-          <span class="wa-loc">愛知県岡崎市</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="wa-card" data-taste="reno" data-budget="b2" data-cat="interior">
-      <div class="wa-img" data-img="ig3"></div>
-      <div class="wa-body">
-        <div class="wa-tags"><span>リノベーション</span><span>リビング</span></div>
-        <h3 class="wa-title">ナチュラルな木目のダイニング</h3>
-        <div class="wa-meta">
-          <span class="wa-loc">愛知県安城市</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="wa-card" data-taste="garden" data-budget="b1" data-cat="garden">
-      <div class="wa-img" data-img="worksPlanting"></div>
-      <div class="wa-body">
-        <div class="wa-tags"><span>ガーデン</span><span>植栽</span></div>
-        <h3 class="wa-title">四季を楽しむ植栽デザイン</h3>
-        <div class="wa-meta">
-          <span class="wa-loc">愛知県名古屋市</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="wa-card" data-taste="modern" data-budget="b3" data-cat="new-exterior concrete">
-      <div class="wa-img" data-img="worksConstruction"></div>
-      <div class="wa-body">
-        <div class="wa-tags"><span>新築外構</span><span>土間コンクリート</span></div>
-        <h3 class="wa-title">新築住宅のトータル外構工事</h3>
-        <div class="wa-meta">
-          <span class="wa-loc">愛知県一宮市</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="wa-card" data-taste="modern" data-budget="b2" data-cat="carport concrete">
-      <div class="wa-img" data-img="work2"></div>
-      <div class="wa-body">
-        <div class="wa-tags"><span>カーポート</span><span>駐車場</span></div>
-        <h3 class="wa-title">2台用カーポートと駐車スペース</h3>
-        <div class="wa-meta">
-          <span class="wa-loc">愛知県稲沢市</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="wa-card" data-taste="natural" data-budget="b1" data-cat="turf garden">
-      <div class="wa-img" data-img="work1"></div>
-      <div class="wa-body">
-        <div class="wa-tags"><span>人工芝</span><span>庭</span></div>
-        <h3 class="wa-title">お子様が遊べる人工芝のお庭</h3>
-        <div class="wa-meta">
-          <span class="wa-loc">愛知県春日井市</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="wa-card" data-taste="modern" data-budget="b1" data-cat="concrete">
-      <div class="wa-img" data-img="worksConstruction"></div>
-      <div class="wa-body">
-        <div class="wa-tags"><span>土間コンクリート</span><span>駐車場</span></div>
-        <h3 class="wa-title">使いやすさを高める土間コンクリート</h3>
-        <div class="wa-meta">
-          <span class="wa-loc">愛知県小牧市</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="wa-card" data-taste="japanese" data-budget="b2" data-cat="block fence">
-      <div class="wa-img" data-img="work6"></div>
-      <div class="wa-body">
-        <div class="wa-tags"><span>ブロック積み</span><span>フェンス</span></div>
-        <h3 class="wa-title">境界を整えるブロック・フェンス工事</h3>
-        <div class="wa-meta">
-          <span class="wa-loc">愛知県江南市</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="wa-card" data-taste="modern" data-budget="b3" data-cat="civil">
-      <div class="wa-img" data-img="worksConstruction"></div>
-      <div class="wa-body">
-        <div class="wa-tags"><span>造成工事</span><span>土木工事</span></div>
-        <h3 class="wa-title">建築前の造成・整地工事</h3>
-        <div class="wa-meta">
-          <span class="wa-loc">愛知県一宮市</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="wa-card" data-taste="modern" data-budget="b2" data-cat="fence">
-      <div class="wa-img" data-img="work3"></div>
-      <div class="wa-body">
-        <div class="wa-tags"><span>フェンス</span><span>目隠し</span></div>
-        <h3 class="wa-title">視線をやわらげる目隠しフェンス</h3>
-        <div class="wa-meta">
-          <span class="wa-loc">愛知県北名古屋市</span>
-        </div>
-      </div>
-    </article>
+    <?php endforeach; ?>
 
   </div>
 </section>
