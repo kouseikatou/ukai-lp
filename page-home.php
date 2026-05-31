@@ -347,19 +347,23 @@ $ukai_hero_images = array(
       <h2 class="section-title">よくあるご質問</h2>
       <ul class="faq-list">
         <li>
-          <button class="faq-q">相談や見積もりだけでもお願いできますか？<span class="faq-toggle">+</span></button>
+          <button class="faq-q" type="button">相談や見積もりだけでもお願いできますか？<span class="faq-toggle">+</span></button>
+          <div class="faq-a"><p>はい、ご相談・お見積もりはすべて無料で承っております。お気軽にお問い合わせください。</p></div>
         </li>
         <li>
-          <button class="faq-q">外構工事の費用はどのくらいかかりますか？<span class="faq-toggle">+</span></button>
+          <button class="faq-q" type="button">外構工事の費用はどのくらいかかりますか？<span class="faq-toggle">+</span></button>
+          <div class="faq-a"><p>工事内容や規模によって異なりますが、玄関まわりのみで50〜150万円、お庭全体で200万円〜が一つの目安です。</p></div>
         </li>
         <li>
-          <button class="faq-q">対応エリアはどこまでですか？<span class="faq-toggle">+</span></button>
+          <button class="faq-q" type="button">対応エリアはどこまでですか？<span class="faq-toggle">+</span></button>
+          <div class="faq-a"><p>愛知県全域・岐阜県・三重県の一部を対応エリアとしております。エリア外の場合も、まずはご相談ください。</p></div>
         </li>
         <li>
-          <button class="faq-q">小さな工事でも対応してもらえますか？<span class="faq-toggle">+</span></button>
+          <button class="faq-q" type="button">小さな工事でも対応してもらえますか？<span class="faq-toggle">+</span></button>
+          <div class="faq-a"><p>はい、植栽1本のお手入れからフェンス1枚の交換まで、規模を問わず対応しております。</p></div>
         </li>
       </ul>
-      <a class="link-btn wide" href="/faq/">すべての質問を見る<span class="arr">→</span></a>
+      <a class="link-btn wide" href="<?php echo esc_url( home_url( '/faq/' ) ); ?>">すべての質問を見る<span class="arr">→</span></a>
     </div>
     <aside class="contact-card" id="contact">
       <div class="contact-copy">

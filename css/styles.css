@@ -502,6 +502,27 @@ a.news-text:hover{color: var(--accent)}
   color: var(--accent);
   font-weight: 400;
 }
+.faq .faq-a{
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .25s ease;
+}
+.faq .faq-q[aria-expanded="true"] + .faq-a,
+.faq .faq-q.is-open + .faq-a{
+  grid-template-rows: 1fr;
+}
+.faq .faq-a > p{
+  overflow: hidden;
+  margin: 0;
+  padding: 0 4px;
+  font-size: 12.5px;
+  line-height: 1.85;
+  color: var(--ink-2);
+}
+.faq .faq-q[aria-expanded="true"] + .faq-a > p,
+.faq .faq-q.is-open + .faq-a > p{
+  padding: 0 4px 18px;
+}
 .contact-card{
   background: var(--bg);
   border: 1px solid var(--rule);
