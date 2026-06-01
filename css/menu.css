@@ -64,7 +64,7 @@
   align-items: center;
   color: var(--ink);
 }
-.md-logo-image{width:48px; height:auto; filter: brightness(0) saturate(100%)}
+.md-logo-image{width:48px; height:auto}
 .md-close{
   width: 40px; height: 40px;
   display: grid;

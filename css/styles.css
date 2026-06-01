@@ -54,9 +54,6 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 }
 .logo{display:flex; align-items:center; color: var(--ink)}
 .logo-image{width:48px; height:auto}
-.logo-image{
-  filter: brightness(0) saturate(100%);
-}
 .nav{
   margin-left: 28px;
   display:flex; gap: 22px;
