@@ -73,9 +73,6 @@ get_header();
         </div>
         <h3 class="wa-title"><?php echo esc_html( $work['title'] ); ?></h3>
         <p class="wa-desc"><?php echo esc_html( $work['desc'] ); ?></p>
-        <div class="wa-meta">
-          <span class="wa-loc"><?php echo esc_html( $work['loc'] ); ?></span>
-        </div>
       </div>
     </article>
     <?php endforeach; ?>

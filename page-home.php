@@ -264,27 +264,27 @@ $ukai_hero_images = array(
       <article class="voice-card">
         <div class="voice-img" data-img="voice1"></div>
         <p>イメージ以上の仕上がりで、<br/>本当にお願いしてよかったです。</p>
-        <div class="voice-meta">愛知県岡崎市 ／ Kさま</div>
+        <div class="voice-meta">Kさま</div>
       </article>
       <article class="voice-card">
         <div class="voice-img" data-img="voice2"></div>
         <p>子どもが喜ぶ庭が完成し、<br/>週末が待ち遠しくなりました。</p>
-        <div class="voice-meta">愛知県豊田市 ／ Mさま</div>
+        <div class="voice-meta">Mさま</div>
       </article>
       <article class="voice-card">
         <div class="voice-img" data-img="voice3"></div>
         <p>相談しやすく、予算内で<br/>理想の外構が実現しました。</p>
-        <div class="voice-meta">愛知県安城市 ／ Tさま</div>
+        <div class="voice-meta">Tさま</div>
       </article>
       <article class="voice-card">
         <div class="voice-img" data-img="voice4"></div>
         <p>デザインも素敵で、何より<br/>夜の雰囲気が気に入っています。</p>
-        <div class="voice-meta">愛知県刈谷市 ／ Yさま</div>
+        <div class="voice-meta">Yさま</div>
       </article>
       <article class="voice-card">
         <div class="voice-img" data-img="voice5"></div>
         <p>アフターサポートも丁寧で、<br/>安心してお任せできます。</p>
-        <div class="voice-meta">愛知県名古屋市 ／ Yさま</div>
+        <div class="voice-meta">Yさま</div>
       </article>
     </div>
     <div class="voice-pager">
