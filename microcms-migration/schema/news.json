@@ -1,0 +1,20 @@
+{
+  "apiFields": [
+    { "idValue": "title", "fieldId": "title", "name": "タイトル", "kind": "text", "required": true },
+    {
+      "idValue": "category",
+      "fieldId": "category",
+      "name": "区分",
+      "kind": "select",
+      "required": true,
+      "multipleSelect": false,
+      "selectItems": [
+        { "id": "event", "value": "イベント情報" },
+        { "id": "works", "value": "施工事例" },
+        { "id": "info", "value": "お知らせ" }
+      ]
+    },
+    { "idValue": "body", "fieldId": "body", "name": "本文", "kind": "richEditorV2", "required": false },
+    { "idValue": "eyecatch", "fieldId": "eyecatch", "name": "アイキャッチ", "kind": "media", "required": false }
+  ]
+}

@@ -1,0 +1,68 @@
+name: Deploy standalone site to XServer (ukai-kogyo.jp)
+
+on:
+  # 新ドメイン(ukai-kogyo.jp)用。XSERVER_UKAIJP_DOCROOT を設定後に手動実行する。
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-xserver-standalone
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate inc/config.php from secrets
+        env:
+          SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
+          API_KEY: ${{ secrets.MICROCMS_API_KEY }}
+        run: |
+          cat > xserver-build/inc/config.php <<PHP
+          <?php
+          return array(
+              'service_id' => '${SERVICE_ID}',
+              'api_key'    => '${API_KEY}',
+              'cache_ttl'  => 600,
+              'site_url'   => 'https://ukai-kogyo.jp',
+          );
+          PHP
+          echo "config.php generated (service_id=${SERVICE_ID})"
+
+      - name: Setup SSH key
+        env:
+          SSH_KEY: ${{ secrets.XSERVER_SSH_KEY }}
+          HOST: ${{ secrets.XSERVER_HOST }}
+          PORT: ${{ secrets.XSERVER_PORT }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/xserver
+          chmod 600 ~/.ssh/xserver
+          ssh-keyscan -p "$PORT" -H "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Deploy xserver-build/ via rsync
+        env:
+          USER: ${{ secrets.XSERVER_USER }}
+          HOST: ${{ secrets.XSERVER_HOST }}
+          PORT: ${{ secrets.XSERVER_PORT }}
+          DEST: ${{ secrets.XSERVER_UKAIJP_DOCROOT }}
+        run: |
+          SSH_OPTS="-i ~/.ssh/xserver -p $PORT \
+            -o PubkeyAcceptedAlgorithms=+ssh-rsa \
+            -o HostKeyAlgorithms=+ssh-rsa \
+            -o StrictHostKeyChecking=no"
+          rsync -avz --delete \
+            -e "ssh $SSH_OPTS" \
+            --exclude='.well-known/' \
+            --exclude='cache/' \
+            --exclude='.DS_Store' \
+            --exclude='README-deploy.md' \
+            --exclude='config.sample.php' \
+            xserver-build/ \
+            "$USER@$HOST:$DEST"
+
+      - name: Summary
+        run: echo "Deployed standalone site to https://ukai-kogyo.jp/"

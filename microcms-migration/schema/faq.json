@@ -1,0 +1,21 @@
+{
+  "apiFields": [
+    { "idValue": "question", "fieldId": "question", "name": "質問", "kind": "text", "required": true },
+    { "idValue": "answer", "fieldId": "answer", "name": "回答", "kind": "textArea", "required": true },
+    {
+      "idValue": "category",
+      "fieldId": "category",
+      "name": "カテゴリ",
+      "kind": "select",
+      "required": true,
+      "multipleSelect": false,
+      "selectItems": [
+        { "id": "consult", "value": "ご相談・お見積もり" },
+        { "id": "cost", "value": "費用・お支払い" },
+        { "id": "work", "value": "工事について" },
+        { "id": "design", "value": "プラン・デザイン" },
+        { "id": "after", "value": "アフターサービス" }
+      ]
+    }
+  ]
+}

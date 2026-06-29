@@ -1,0 +1,43 @@
+{
+  "apiFields": [
+    { "idValue": "title", "fieldId": "title", "name": "事例タイトル", "kind": "text", "required": true },
+    { "idValue": "image", "fieldId": "image", "name": "メイン画像", "kind": "media", "required": false },
+    {
+      "idValue": "taste",
+      "fieldId": "taste",
+      "name": "テイスト",
+      "kind": "select",
+      "required": false,
+      "multipleSelect": false,
+      "selectItems": [
+        { "id": "modern", "value": "modern" },
+        { "id": "japanese", "value": "japanese" },
+        { "id": "garden", "value": "garden" },
+        { "id": "natural", "value": "natural" },
+        { "id": "civil", "value": "civil" }
+      ]
+    },
+    {
+      "idValue": "categories",
+      "fieldId": "categories",
+      "name": "カテゴリ",
+      "kind": "select",
+      "required": false,
+      "multipleSelect": true,
+      "selectItems": [
+        { "id": "new-exterior", "value": "new-exterior" },
+        { "id": "concrete", "value": "concrete" },
+        { "id": "fence", "value": "fence" },
+        { "id": "carport", "value": "carport" },
+        { "id": "approach", "value": "approach" },
+        { "id": "turf", "value": "turf" },
+        { "id": "garden", "value": "garden" },
+        { "id": "block", "value": "block" },
+        { "id": "civil", "value": "civil" }
+      ]
+    },
+    { "idValue": "tags", "fieldId": "tags", "name": "表示タグ（カンマ区切り）", "kind": "text", "required": false },
+    { "idValue": "description", "fieldId": "description", "name": "説明文", "kind": "textArea", "required": false },
+    { "idValue": "location", "fieldId": "location", "name": "所在地（非表示・記録用）", "kind": "text", "required": false }
+  ]
+}

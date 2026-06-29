@@ -1,0 +1,7 @@
+{
+  "apiFields": [
+    { "idValue": "comment", "fieldId": "comment", "name": "コメント", "kind": "textArea", "required": true },
+    { "idValue": "customerName", "fieldId": "customerName", "name": "お客様表記名", "kind": "text", "required": false },
+    { "idValue": "image", "fieldId": "image", "name": "サムネイル", "kind": "media", "required": false }
+  ]
+}

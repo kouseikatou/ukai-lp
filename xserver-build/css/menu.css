@@ -1,0 +1,203 @@
+/* ============ MOBILE DRAWER MENU ============ */
+
+/* Hamburger animation */
+.hamburger-anim span{
+  transition: transform .25s, opacity .2s;
+}
+.hamburger-anim.is-active span:nth-child(1){
+  transform: translateY(6px) rotate(45deg);
+}
+.hamburger-anim.is-active span:nth-child(2){
+  opacity: 0;
+}
+.hamburger-anim.is-active span:nth-child(3){
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobile-drawer{
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+}
+.mobile-drawer.is-open{
+  pointer-events: auto;
+}
+.md-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 14, 8, .45);
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.mobile-drawer.is-open .md-backdrop{
+  opacity: 1;
+}
+.md-panel{
+  position: absolute;
+  top: 0; right: 0;
+  width: min(420px, 92vw);
+  height: 100%;
+  background: var(--bg-paper, #f5efe5);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform .3s cubic-bezier(.4, 0, .2, 1);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: -16px 0 40px rgba(0,0,0,.15);
+}
+.mobile-drawer.is-open .md-panel{
+  transform: translateX(0);
+}
+
+/* HEAD */
+.md-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--rule);
+}
+.md-logo{
+  display: flex;
+  align-items: center;
+  color: var(--ink);
+}
+.md-logo-image{width:48px; height:auto}
+.md-close{
+  width: 40px; height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--rule);
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all .15s;
+}
+.md-close:hover{border-color: var(--accent); color: var(--accent)}
+
+/* NAV */
+.md-nav{
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+}
+.md-nav-item{
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) 24px;
+  gap: 14px;
+  align-items: center;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  transition: padding .2s, background .15s;
+}
+.md-nav-item:hover{background: rgba(0,0,0,.025); padding-left: 30px}
+.md-nav-item:hover .md-nav-arr{color: var(--accent); transform: translateX(4px)}
+.md-nav-num{
+  font-family: var(--f-en-serif);
+  font-size: 14px;
+  letter-spacing: .04em;
+  color: var(--accent);
+}
+.md-nav-label{display: flex; flex-direction: column; gap: 3px}
+.md-nav-ja{
+  font-family: var(--f-ja-serif);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+.md-nav-en{
+  font-family: var(--f-en-serif);
+  font-size: 10.5px;
+  letter-spacing: .14em;
+  color: var(--ink-3);
+  text-transform: uppercase;
+}
+.md-nav-arr{
+  font-family: var(--f-en-serif);
+  font-size: 16px;
+  color: var(--ink-3);
+  transition: all .2s;
+  text-align: right;
+}
+
+/* CTA */
+.md-cta{
+  padding: 24px 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-top: 1px solid var(--rule);
+  margin-top: auto;
+}
+.md-cta-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--accent);
+  color: #fff;
+  padding: 16px 20px;
+  font-family: var(--f-ja-serif);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  transition: background .15s, transform .15s;
+}
+.md-cta-btn:hover{background: var(--accent-dk, #4a3520); transform: translateY(-1px)}
+.md-tel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 14px;
+  border: 1px solid var(--rule);
+  background: #fff;
+  color: var(--ink);
+}
+.md-tel-label{
+  font-size: 10.5px;
+  letter-spacing: .12em;
+  color: var(--ink-3);
+}
+.md-tel-num{
+  font-family: var(--f-en-serif);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  color: var(--accent);
+  line-height: 1.2;
+  margin-top: 2px;
+}
+.md-tel-hours{
+  font-size: 10px;
+  color: var(--ink-3);
+  margin-top: 2px;
+  letter-spacing: .04em;
+}
+
+/* FOOT */
+.md-foot{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px 22px;
+  font-size: 10.5px;
+  color: var(--ink-3);
+  letter-spacing: .04em;
+}
+.md-foot a{color: var(--ink-2)}
+.md-foot a:hover{color: var(--accent)}
+.md-copy{
+  font-family: var(--f-en-serif);
+  letter-spacing: .08em;
+}
+
+/* Small phones */
+@media (max-width: 380px){
+  .md-nav-item{padding: 16px 18px; grid-template-columns: 44px 1fr 20px; gap: 10px}
+  .md-cta{padding: 20px 18px 14px}
+  .md-foot{padding: 12px 18px 18px}
+}

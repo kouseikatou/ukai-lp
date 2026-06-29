@@ -1,0 +1,25 @@
+# 鵜飼工業 スタンドアロン版ルーティング
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # /news/{id}/ → news-detail.php?id={id}
+  RewriteRule ^news/([a-zA-Z0-9_-]+)/?$ news-detail.php?id=$1 [L,QSA]
+
+  # /works/ /faq/ /company/ /contact/ /news/ → 各PHP
+  RewriteRule ^works/?$   works.php   [L]
+  RewriteRule ^faq/?$     faq.php     [L]
+  RewriteRule ^company/?$ company.php [L]
+  RewriteRule ^contact/?$ contact.php [L]
+  RewriteRule ^news/?$    news.php    [L]
+</IfModule>
+
+# 設定・キャッシュ・データへの直接アクセス禁止
+<FilesMatch "^(config\.php|config\.sample\.php)$">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 ^/inc/
+RedirectMatch 404 ^/cache/
+RedirectMatch 404 ^/data/

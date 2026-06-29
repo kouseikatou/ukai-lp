@@ -45,6 +45,8 @@ jobs:
             --exclude='.github/' \
             --exclude='.gitignore' \
             --exclude='.DS_Store' \
+            --exclude='xserver-build/' \
+            --exclude='microcms-migration/' \
             ./ \
             "$USER@$HOST:$DEST"
 

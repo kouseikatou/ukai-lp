@@ -1,0 +1,88 @@
+name: Deploy microCMS preview to old domain
+
+# 動作確認用：microCMS版スタンドアロンサイトを旧ドメイン
+# (ukaikougyou.insane-innovation-aichi.com) の公開ディレクトリへ配置する。
+# --delete を使わない追加デプロイ。WordPress コアは残し、index.php / .htaccess を
+# 上書きしてスタンドアロン版が表示される（可逆）。
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'xserver-build/**'
+      - '.github/workflows/deploy-preview-oldsite.yml'
+
+concurrency:
+  group: deploy-oldsite-preview
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate inc/config.php from secrets
+        env:
+          SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
+          API_KEY: ${{ secrets.MICROCMS_API_KEY }}
+        run: |
+          cat > xserver-build/inc/config.php <<PHP
+          <?php
+          return array(
+              'service_id' => '${SERVICE_ID}',
+              'api_key'    => '${API_KEY}',
+              'cache_ttl'  => 600,
+              'site_url'   => 'https://ukaikougyou.insane-innovation-aichi.com',
+          );
+          PHP
+          echo "config.php generated"
+
+      - name: Setup SSH key
+        env:
+          SSH_KEY: ${{ secrets.XSERVER_SSH_KEY }}
+          HOST: ${{ secrets.XSERVER_HOST }}
+          PORT: ${{ secrets.XSERVER_PORT }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/xserver
+          chmod 600 ~/.ssh/xserver
+          ssh-keyscan -p "$PORT" -H "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Compute docroot and deploy
+        env:
+          USER: ${{ secrets.XSERVER_USER }}
+          HOST: ${{ secrets.XSERVER_HOST }}
+          PORT: ${{ secrets.XSERVER_PORT }}
+          THEME_PATH: ${{ secrets.XSERVER_THEME_PATH }}
+        run: |
+          # 旧ドメインの公開ディレクトリ = テーマパスから /wp-content 以降を除いた部分
+          DOCROOT="${THEME_PATH%%/wp-content/*}"
+          if [ "$DOCROOT" = "$THEME_PATH" ] || [ -z "$DOCROOT" ]; then
+            echo "::error::Could not derive docroot from XSERVER_THEME_PATH"
+            exit 1
+          fi
+          SSH_OPTS="-i ~/.ssh/xserver -p $PORT \
+            -o PubkeyAcceptedAlgorithms=+ssh-rsa \
+            -o HostKeyAlgorithms=+ssh-rsa \
+            -o StrictHostKeyChecking=no"
+
+          # ガード: 想定どおり WordPress の公開ディレクトリか確認
+          ssh $SSH_OPTS "$USER@$HOST" "test -f '$DOCROOT/wp-load.php'" \
+            || { echo '::error::wp-load.php not found at derived docroot'; exit 1; }
+
+          rsync -avz \
+            -e "ssh $SSH_OPTS" \
+            --exclude='.well-known/' \
+            --exclude='cache/' \
+            --exclude='.DS_Store' \
+            --exclude='README-deploy.md' \
+            --exclude='config.sample.php' \
+            xserver-build/ \
+            "$USER@$HOST:$DOCROOT/"
+
+      - name: Summary
+        run: echo "Deployed microCMS preview to https://ukaikougyou.insane-innovation-aichi.com/"

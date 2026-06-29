@@ -20,3 +20,7 @@ npm-debug.log*
 # Env / secrets
 .env
 .env.*
+
+# microCMS standalone build (secrets / cache)
+xserver-build/inc/config.php
+xserver-build/cache/
