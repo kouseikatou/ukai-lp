@@ -74,7 +74,7 @@ jobs:
           # ガード: 公開ディレクトリが存在するか確認
           if ! ssh $SSH_OPTS "$USER@$HOST" "test -d '$DEST'"; then
             echo "::group::Discovered directory layout"
-            ssh $SSH_OPTS "$USER@$HOST" "echo '[account home domains]'; ls -1 \"$ACCT_HOME\" 2>/dev/null; echo '[*/public_html]'; ls -1d \"$ACCT_HOME\"/*/public_html 2>/dev/null" || true
+            ssh $SSH_OPTS "$USER@$HOST" "echo '[find ukai-kogyo.jp]'; find /home -maxdepth 4 -type d -name 'ukai-kogyo.jp' 2>/dev/null; echo '[find public_html docroots]'; find /home -maxdepth 4 -type d -name 'public_html' 2>/dev/null" || true
             echo "::endgroup::"
             echo '::error::ukai-kogyo.jp の公開ディレクトリが見つかりません。上のログの実パスを確認してください'
             exit 1
