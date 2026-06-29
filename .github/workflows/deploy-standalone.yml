@@ -47,41 +47,23 @@ jobs:
           chmod 600 ~/.ssh/xserver
           ssh-keyscan -p "$PORT" -H "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
 
-      - name: Compute docroot and deploy
+      - name: Deploy to ukai-kogyo.jp docroot
         env:
           USER: ${{ secrets.XSERVER_USER }}
           HOST: ${{ secrets.XSERVER_HOST }}
           PORT: ${{ secrets.XSERVER_PORT }}
-          THEME_PATH: ${{ secrets.XSERVER_THEME_PATH }}
           UKAIJP_DOCROOT: ${{ secrets.XSERVER_UKAIJP_DOCROOT }}
         run: |
-          # ukai-kogyo.jp の公開ディレクトリを決定。
-          # 明示シークレットがあれば優先、無ければ XServer 標準構成から算出。
-          if [ -n "$UKAIJP_DOCROOT" ]; then
-            DEST="$UKAIJP_DOCROOT"
-          else
-            OLD="${THEME_PATH%%/wp-content/*}"             # /home/acct/<olddomain>/public_html
-            ACCT_HOME="$(dirname "$(dirname "$OLD")")"      # /home/acct
-            DEST="$ACCT_HOME/ukai-kogyo.jp/public_html"
-          fi
-          echo "Deploy target resolved."
+          # 公開ディレクトリ。明示シークレットがあれば優先、無ければホーム相対の標準パス。
+          DEST="${UKAIJP_DOCROOT:-ukai-kogyo.jp/public_html}"
 
           SSH_OPTS="-i ~/.ssh/xserver -p $PORT \
             -o PubkeyAcceptedAlgorithms=+ssh-rsa \
             -o HostKeyAlgorithms=+ssh-rsa \
             -o StrictHostKeyChecking=no"
 
-          # ガード: 公開ディレクトリが存在するか確認
-          if ! ssh $SSH_OPTS "$USER@$HOST" "test -d '$DEST'"; then
-            echo "::group::Discovered directory layout"
-            echo "OLD=$OLD"
-            echo "ACCT_HOME=$ACCT_HOME"
-            echo "DEST=$DEST"
-            ssh $SSH_OPTS "$USER@$HOST" "echo '[remote HOME]'; echo \$HOME; echo '[ls ACCT_HOME]'; ls -1 '$ACCT_HOME' 2>/dev/null; echo '[find ukai-kogyo under HOME]'; find \"\$HOME\" -maxdepth 4 -iname '*ukai-kogyo*' 2>/dev/null; echo '[find public_html under HOME]'; find \"\$HOME\" -maxdepth 4 -type d -name 'public_html' 2>/dev/null" || true
-            echo "::endgroup::"
-            echo '::error::ukai-kogyo.jp の公開ディレクトリが見つかりません。上のログの実パスを確認してください'
-            exit 1
-          fi
+          ssh $SSH_OPTS "$USER@$HOST" "test -d '$DEST'" \
+            || { echo '::error::ukai-kogyo.jp の公開ディレクトリが見つかりません'; exit 1; }
 
           rsync -avz \
             -e "ssh $SSH_OPTS" \
