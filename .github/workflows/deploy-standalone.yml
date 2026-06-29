@@ -1,8 +1,12 @@
 name: Deploy standalone site to XServer (ukai-kogyo.jp)
 
 on:
-  # 新ドメイン(ukai-kogyo.jp)用。XSERVER_UKAIJP_DOCROOT を設定後に手動実行する。
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'xserver-build/**'
+      - '.github/workflows/deploy-standalone.yml'
 
 concurrency:
   group: deploy-xserver-standalone
@@ -29,7 +33,7 @@ jobs:
               'site_url'   => 'https://ukai-kogyo.jp',
           );
           PHP
-          echo "config.php generated (service_id=${SERVICE_ID})"
+          echo "config.php generated"
 
       - name: Setup SSH key
         env:
@@ -43,18 +47,35 @@ jobs:
           chmod 600 ~/.ssh/xserver
           ssh-keyscan -p "$PORT" -H "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
 
-      - name: Deploy xserver-build/ via rsync
+      - name: Compute docroot and deploy
         env:
           USER: ${{ secrets.XSERVER_USER }}
           HOST: ${{ secrets.XSERVER_HOST }}
           PORT: ${{ secrets.XSERVER_PORT }}
-          DEST: ${{ secrets.XSERVER_UKAIJP_DOCROOT }}
+          THEME_PATH: ${{ secrets.XSERVER_THEME_PATH }}
+          UKAIJP_DOCROOT: ${{ secrets.XSERVER_UKAIJP_DOCROOT }}
         run: |
+          # ukai-kogyo.jp の公開ディレクトリを決定。
+          # 明示シークレットがあれば優先、無ければ XServer 標準構成から算出。
+          if [ -n "$UKAIJP_DOCROOT" ]; then
+            DEST="$UKAIJP_DOCROOT"
+          else
+            OLD="${THEME_PATH%%/wp-content/*}"             # /home/acct/<olddomain>/public_html
+            ACCT_HOME="$(dirname "$(dirname "$OLD")")"      # /home/acct
+            DEST="$ACCT_HOME/ukai-kogyo.jp/public_html"
+          fi
+          echo "Deploy target resolved."
+
           SSH_OPTS="-i ~/.ssh/xserver -p $PORT \
             -o PubkeyAcceptedAlgorithms=+ssh-rsa \
             -o HostKeyAlgorithms=+ssh-rsa \
             -o StrictHostKeyChecking=no"
-          rsync -avz --delete \
+
+          # ガード: 公開ディレクトリが存在するか確認
+          ssh $SSH_OPTS "$USER@$HOST" "test -d '$DEST'" \
+            || { echo '::error::ukai-kogyo.jp の公開ディレクトリが見つかりません。XSERVER_UKAIJP_DOCROOT を設定してください'; exit 1; }
+
+          rsync -avz \
             -e "ssh $SSH_OPTS" \
             --exclude='.well-known/' \
             --exclude='cache/' \
@@ -62,7 +83,7 @@ jobs:
             --exclude='README-deploy.md' \
             --exclude='config.sample.php' \
             xserver-build/ \
-            "$USER@$HOST:$DEST"
+            "$USER@$HOST:$DEST/"
 
       - name: Summary
         run: echo "Deployed standalone site to https://ukai-kogyo.jp/"

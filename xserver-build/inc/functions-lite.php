@@ -35,9 +35,7 @@ function ukai_social_links() {
 /** ニュース区分（microCMS の news にはカテゴリが無いため既定は info=お知らせ） */
 function ukai_news_categories() {
     return array(
-        'event' => array('name' => 'イベント情報', 'description' => '', 'tag_class' => 'tag-event'),
-        'works' => array('name' => '施工事例',     'description' => '', 'tag_class' => 'tag-works'),
-        'info'  => array('name' => 'お知らせ',     'description' => '', 'tag_class' => 'tag-info'),
+        'info' => array('name' => 'お知らせ', 'description' => '', 'tag_class' => 'tag-info'),
     );
 }
 function ukai_news_tag_class($slug) {
